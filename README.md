@@ -40,6 +40,13 @@ This is how our microservice-based architecture allows us to scale.
  
 We are also leveraging a library called [Seneca](http://senecajs.org/), to handling the inter-service routing to individual methods in each service.
 
+### Docker
+Docker is used in order to isolate, and run each service in its own environment. It is also used to orchestrate and scale all of the services together into a single deployment,
+that can be deployed on any number of machine(s)/VM(s) that have Docker installed.  I encourage you to read the Docker intro: https://docs.docker.com/engine/getstarted/
+
+Because of Docker, any new service you create can have almost any type of environment you desire, without affecting the rest of the project's infrastructure.
+
+Basically, its absolutely necessary in order to have an effective microservice workflow going.
 
 # Running this example:
 1. Download and install Docker for your OS.
