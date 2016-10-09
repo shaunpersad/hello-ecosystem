@@ -39,6 +39,8 @@ We are also leveraging a library called Seneca, to handling the inter-service ro
 # Running this example:
 1. Download and install Docker for your OS.
 2. In the project root, run `bash scripts/run.sh`
+3. Navigate to http://localhost:3000/hi to test that the API is up (you should receive a "hi" response).
+3. Navigate to http://localhost:3000/greeting to test the microservices in action (you should receive a greeting).
 3. Profit!
 
 # Scaling this example:
