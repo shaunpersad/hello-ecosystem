@@ -40,8 +40,8 @@ We are also leveraging a library called Seneca, to handling the inter-service ro
 1. Download and install Docker for your OS.
 2. In the project root, run `bash scripts/run.sh`
 3. Navigate to http://localhost:3000/hi to test that the API is up (you should receive a "hi" response).
-3. Navigate to http://localhost:3000/greeting to test the microservices in action (you should receive a greeting).
-3. Profit!
+4. Navigate to http://localhost:3000/greeting to test the microservices in action (you should receive a greeting).
+5. Profit!
 
 # Scaling this example:
 - `docker-compose scale rabbitmq=1 api-gateway=1 service-reverse=3 service-english=2 service-hawaiian=2 service-spanish=2` (or any other amount of integers)
