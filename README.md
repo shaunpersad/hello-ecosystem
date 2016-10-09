@@ -72,7 +72,7 @@ Basically, its absolutely necessary in order to have an effective microservice w
 - Set up a [Docker Hub account](https://hub.docker.com/)
 
 
-### Step by Step of how to set up a microservice project:
+### Step-by-step of how to set up a microservice project:
 1. Create a `{project-name}` directory locally, and use as your working directory for the following steps.
 2. Create a `{project-name}-ecosystem` repository.
 3. Create a `{project-name}-api-gateway` repository.
