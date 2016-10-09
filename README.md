@@ -5,7 +5,7 @@ This builds the entire ecosystem of services for the "Hello" project
 # About
 This is an attempt to create a barebones project based on a "microservices" architecture.
 What this project does is to expose create an API that leverages multiple services in order to build its responses.
-In particular, making a GET request to [http://localhost:3000/greeting] should present you with a response built from several services working together.
+In particular, making a GET request to http://localhost:3000/greeting should present you with a response built from several services working together.
 
 
 # Project Architecture
