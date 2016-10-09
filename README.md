@@ -97,7 +97,7 @@ Basically, its absolutely necessary in order to have an effective microservice w
 3. To view how your changes affect the entire ecosystem, run `docker-compose` with the "-f" flags to reference the ecosystem `docker-compose.yml` + your modified service's `docker-compose.yml`, which will build your local service's container on top of the ecosystem's version of that service.
 
 ### Running the "current" live ecosystem:
-1. In the `{project-name}-ecosystem` directory, run `docker-compose up`.
+1. In the `{project-name}-ecosystem` directory, run `docker-compose pull && docker-compose up`.
 
 ### Setting up an automated build in Docker Hub
 - https://docs.docker.com/docker-hub/builds/
