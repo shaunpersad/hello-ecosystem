@@ -1,0 +1,52 @@
+rabbitmq:
+  image: rabbitmq:3.6.5-management
+  ports:
+    - '8080:15672'
+
+api-gateway:
+  image: shaunpersad/hello-api-gateway
+  command: nodemon index.js
+  environment:
+    NODE_ENV: development
+    APP_PORT: 3000
+  links:
+    - rabbitmq
+  restart: always
+  ports:
+    - '3000:3000'
+
+service-reverse:
+  image: shaunpersad/hello-service-reverse
+  command: nodemon index.js
+  environment:
+    NODE_ENV: development
+  links:
+    - rabbitmq
+  restart: always
+
+service-english:
+  image: shaunpersad/hello-service-english
+  command: nodemon index.js
+  environment:
+    NODE_ENV: development
+  links:
+    - rabbitmq
+  restart: always
+
+service-hawaiian:
+  image: shaunpersad/hello-service-hawaiian
+  command: nodemon index.js
+  environment:
+    NODE_ENV: development
+  links:
+    - rabbitmq
+  restart: always
+
+service-spanish:
+  image: shaunpersad/hello-service-spanish
+  command: nodemon index.js
+  environment:
+    NODE_ENV: development
+  links:
+    - rabbitmq
+  restart: always
