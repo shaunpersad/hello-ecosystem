@@ -64,6 +64,9 @@ Basically, its absolutely necessary in order to have an effective microservice w
 - Each service should have its own set of tests.
 - Proper branch management (currently everything works with master branches)
 - Continuous Integration
+- Scaling the API Gateway
+- Scaling RabbitMQ
+- Add nginx to the mix
 
 # General Microservice notes:
 
