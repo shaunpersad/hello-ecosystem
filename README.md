@@ -44,6 +44,7 @@ We are also leveraging a library called Seneca, to handling the inter-service ro
 # Scaling this example:
 - `docker-compose scale rabbitmq=1 api-gateway=1 service-reverse=3 service-english=2 service-hawaiian=2 service-spanish=2` (or any other amount of integers)
 - Note: in this current setup, only one instance of rabbitmq or the api-gateway can be run, but any number of the "worker" services can be run.
+- To stop the services started by `docker-compose scale`, run `docker-compose stop`
 
 # TODO
 
