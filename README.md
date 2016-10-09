@@ -3,7 +3,7 @@ This builds the entire ecosystem of services for the "Hello" project
 
 
 # About
-This project attempts to create a barebones project based on a "microservices" architecture.
+This is an attempt to create a barebones project based on a "microservices" architecture.
 What this project does is to expose create an API that leverages multiple services in order to build its responses.
 In particular, making a GET request to [http://localhost:3000/greeting] should present you with a response built from several services working together.
 
@@ -29,11 +29,11 @@ The end result is something like: "hello (olleh), hola (aloh), aloha (ahola) fro
 
 ### Inter-service Communication
 Any number of methods (including http requests) can be used to communicate between service to service (including the API Gateway).
-In this case, we are using a message queue, which sends all requests to a queue, where a service listening to that queue may pull down
+In this case, we are using a message queue called (RabbitMQ)[https://www.rabbitmq.com/getstarted.html], which sends all requests to a queue, where a service listening to that queue may pull down
 and work on that request.  This allows us to spin up any number of each service, where only one of each kind of service would be handling any given request.
 This is how our microservice-based architecture allows us to scale.
  
-We are also leveraging a library called Seneca, to handling the inter-service routing to individual methods in each service.
+We are also leveraging a library called (Seneca)[http://senecajs.org/], to handling the inter-service routing to individual methods in each service.
 
 
 # Running this example:
@@ -49,7 +49,6 @@ We are also leveraging a library called Seneca, to handling the inter-service ro
 - To stop the services started by `docker-compose scale`, run `docker-compose stop`
 
 # TODO
-
 - Each service should have its own set of tests.
 - Proper branch management (currently everything works with master branches)
 - Continuous Integration
