@@ -9,7 +9,7 @@ In particular, making a GET request to http://localhost:3000/greeting should pre
 
 
 # Project Architecture
-This project follows the model of having an "API Gateway", which allows for a single API to your project, that then coordinates with the multitude of services in order to build its responses.
+This project follows the model of having an "API Gateway", which allows for a single API to the project, that then coordinates with the multitude of services in order to build its responses.
 
 ### Services
 We have many services in play:
@@ -49,7 +49,7 @@ We are also leveraging a library called [Seneca](http://senecajs.org/), to handl
 5. Profit!
 
 # Scaling this example:
-- `docker-compose scale rabbitmq=1 api-gateway=1 service-reverse=3 service-english=2 service-hawaiian=2 service-spanish=2` (or any other amount of integers)
+- `docker-compose scale rabbitmq=1 api-gateway=1 service-reverse=3 service-english=2 service-hawaiian=2 service-spanish=2` (or any other integer amounts)
 - Note: in this current setup, only one instance of rabbitmq or the api-gateway can be run, but any number of the "worker" services can be run.
 - To stop the services started by `docker-compose scale`, run `docker-compose stop`
 
