@@ -99,5 +99,5 @@ Basically, its absolutely necessary in order to have an effective microservice w
 ### Running the "current" live ecosystem:
 1. In the `{project-name}-ecosystem` directory, run `docker-compose pull && docker-compose up`.
 
-### Setting up an automated build in Docker Hub
+### *Setting up an automated build in Docker Hub
 - https://docs.docker.com/docker-hub/builds/
