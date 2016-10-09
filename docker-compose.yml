@@ -13,7 +13,7 @@ api-gateway:
     - rabbitmq
   restart: always
   ports:
-    - '3000:${APP_PORT}'
+    - '3000:3000'
 
 service-reverse:
   image: shaunpersad/hello-service-reverse
