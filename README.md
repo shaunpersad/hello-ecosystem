@@ -38,7 +38,7 @@ We are also leveraging a library called Seneca, to handling the inter-service ro
 
 # Running this example:
 1. Download and install Docker for your OS.
-2. In the project root, run `bash scripts/ruh.sh`
+2. In the project root, run `bash scripts/run.sh`
 3. Profit!
 
 # Scaling this example:
