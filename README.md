@@ -12,17 +12,20 @@ In particular, making a GET request to [http://localhost:3000/greeting] should p
 This project follows the model of having an "API Gateway", which allows for a single API to your project, that then coordinates with the multitude of services in order to build its responses.
 
 ### Services
-We have four services in play:
-- one to handle requests for English words, and has a method to generate an English greeting
-- one to handle requests for Hawaiian words, and has a method to generate an Hawaiian greeting
-- one to handle requests for Spanish words, and has a method to generate an Spanish greeting
-- one to handle requests for reversed words, and has a method to generate the reverse of a word.
+We have many services in play:
+- one to handle requests for English words, and has a method to generate an English greeting: [https://github.com/shaunpersad/hello-service-english]
+- one to handle requests for Hawaiian words, and has a method to generate an Hawaiian greeting: [https://github.com/shaunpersad/hello-service-hawaiian]
+- one to handle requests for Spanish words, and has a method to generate an Spanish greeting: [https://github.com/shaunpersad/hello-service-spanish]
+- one to handle requests for reversed words, and has a method to generate the reverse of a word: [https://github.com/shaunpersad/hello-service-reverse]
+- An API Gateway: [https://github.com/shaunpersad/hello-api-gateway]
 
 ### Request-response Flow
 When the user makes a request to the "/greeting" endpoint, the API Gateway makes a call to the English, Hawaiian, and Spanish
 services, which in turn make calls to the "reversed words" service. Each language service then takes their own internally generated greeting,
 along with the reverse of that greeting (courtesy of the "reversed words" service), and sends them both back to the API Gateway,
 which then concatenates and uses the responses from all three language services to build it's own response.
+
+The end result is something like: "hello (olleh), hola (aloh), aloha (ahola) from the upside-down world!"
 
 ### Inter-service Communication
 Any number of methods (including http requests) can be used to communicate between service to service (including the API Gateway).
@@ -42,6 +45,11 @@ We are also leveraging a library called Seneca, to handling the inter-service ro
 - `docker-compose scale rabbitmq=1 api-gateway=1 service-reverse=3 service-english=2 service-hawaiian=2 service-spanish=2` (or any other amount of integers)
 - Note: in this current setup, only one instance of rabbitmq or the api-gateway can be run, but any number of the "worker" services can be run.
 
+# TODO
+
+- Each service should have its own set of tests.
+- Proper branch management (currently everything works with master branches)
+- Continuous Integration
 
 # General Microservice notes:
 
@@ -71,7 +79,8 @@ We are also leveraging a library called Seneca, to handling the inter-service ro
 
 ### Working on a service:
 1. You MUST have the `{project-name}-ecosystem` repo next to the `{project-name}-service-{service-name}` repo that you are working on, so that you can spin up the ecosystem with your modified service.
-2. To view how your changes affect the entire ecosystem, run `docker-compose` with the "-f" flags to reference the ecosystem `docker-compose.yml` + your modified service's `docker-compose.yml`, which will build your local service's container on top of the ecosystem's version of that service.
+2. (Optional) Update the ecosystem by running `docker-compose pull` in the `{project-name}-ecosystem` directory.
+3. To view how your changes affect the entire ecosystem, run `docker-compose` with the "-f" flags to reference the ecosystem `docker-compose.yml` + your modified service's `docker-compose.yml`, which will build your local service's container on top of the ecosystem's version of that service.
 
 ### Running the "current" live ecosystem:
 1. In the `{project-name}-ecosystem` directory, run `docker-compose up`.
