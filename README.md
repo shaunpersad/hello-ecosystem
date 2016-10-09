@@ -13,11 +13,16 @@ This project follows the model of having an "API Gateway", which allows for a si
 
 ### Services
 We have many services in play:
-- one to handle requests for English words, and has a method to generate an English greeting: [https://github.com/shaunpersad/hello-service-english]
-- one to handle requests for Hawaiian words, and has a method to generate an Hawaiian greeting: [https://github.com/shaunpersad/hello-service-hawaiian]
-- one to handle requests for Spanish words, and has a method to generate an Spanish greeting: [https://github.com/shaunpersad/hello-service-spanish]
-- one to handle requests for reversed words, and has a method to generate the reverse of a word: [https://github.com/shaunpersad/hello-service-reverse]
-- An API Gateway: [https://github.com/shaunpersad/hello-api-gateway]
+- one to handle requests for English words, and has a method to generate an English greeting: 
+    - https://github.com/shaunpersad/hello-service-english
+- one to handle requests for Hawaiian words, and has a method to generate an Hawaiian greeting:
+    - https://github.com/shaunpersad/hello-service-hawaiian
+- one to handle requests for Spanish words, and has a method to generate an Spanish greeting: 
+    - https://github.com/shaunpersad/hello-service-spanish
+- one to handle requests for reversed words, and has a method to generate the reverse of a word: 
+    - https://github.com/shaunpersad/hello-service-reverse
+- An API Gateway: 
+    - https://github.com/shaunpersad/hello-api-gateway
 
 ### Request-response Flow
 When the user makes a request to the "/greeting" endpoint, the API Gateway makes a call to the English, Hawaiian, and Spanish
@@ -29,11 +34,11 @@ The end result is something like: "hello (olleh), hola (aloh), aloha (ahola) fro
 
 ### Inter-service Communication
 Any number of methods (including http requests) can be used to communicate between service to service (including the API Gateway).
-In this case, we are using a message queue called (RabbitMQ)[https://www.rabbitmq.com/getstarted.html], which sends all requests to a queue, where a service listening to that queue may pull down
+In this case, we are using a message queue called [RabbitMQ](https://www.rabbitmq.com/getstarted.html), which sends all requests to a queue, where a service listening to that queue may pull down
 and work on that request.  This allows us to spin up any number of each service, where only one of each kind of service would be handling any given request.
 This is how our microservice-based architecture allows us to scale.
  
-We are also leveraging a library called (Seneca)[http://senecajs.org/], to handling the inter-service routing to individual methods in each service.
+We are also leveraging a library called [Seneca](http://senecajs.org/), to handling the inter-service routing to individual methods in each service.
 
 
 # Running this example:
@@ -56,8 +61,8 @@ We are also leveraging a library called (Seneca)[http://senecajs.org/], to handl
 # General Microservice notes:
 
 ### Prereqs:
-- Download Docker: [https://www.docker.com/products/overview]
-- Set up a Docker Hub account: [https://hub.docker.com/]
+- Download [Docker](https://www.docker.com/products/overview)
+- Set up a [Docker Hub account](https://hub.docker.com/)
 
 
 ### Step by Step of how to set up a microservice project:
@@ -88,4 +93,4 @@ We are also leveraging a library called (Seneca)[http://senecajs.org/], to handl
 1. In the `{project-name}-ecosystem` directory, run `docker-compose up`.
 
 ### Setting up an automated build in Docker Hub
-- [https://docs.docker.com/docker-hub/builds/]
+- https://docs.docker.com/docker-hub/builds/
